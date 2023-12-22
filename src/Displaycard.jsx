@@ -6,6 +6,7 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import './App.css';
 
+
 const bull = (
   <Box
     component="span"
@@ -15,29 +16,21 @@ const bull = (
   </Box>
 );
 
-const Displaycard = () => {
+const Displaycard = ({data}) => {
   return (
     <div className="card">
       <Card sx={{ minWidth: 275 }}>
         <CardContent>
           <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-            Card No. 1
+            {data.tickets[0].id}
           </Typography>
           <Typography variant="h5" component="div">
-            be{bull}nev{bull}o{bull}lent
+            {data.tickets[0].title}
           </Typography>
-          <Typography sx={{ mb: 1.5 }} color="text.secondary">
-            adjective
-          </Typography>
-          <Typography variant="body2">
-            well meaning and kindly.
-            <br />
-            {'"a benevolent smile"'}
+          <Typography variant="h5" component="div">
+            {data.tickets[0].tag}
           </Typography>
         </CardContent>
-        <CardActions>
-          <Button size="small">Learn More</Button>
-        </CardActions>
       </Card>
     </div>
   );
