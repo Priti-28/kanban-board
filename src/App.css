@@ -1,7 +1,27 @@
 .navigation {
-  padding: 3px 5px 12px 5px;
+  padding: 7px 5px 12px 5px;
+  display: flex;
 }
 
 .dashboard {
   background-color: rgb(208, 205, 205);
 }
+
+.darkmode {
+  margin-left: 90%;
+}
+
+.card-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.card {
+  width:150px;
+  margin: 10px; 
+  padding: 10px; 
+  box-sizing: border-box;
+}
+
+
