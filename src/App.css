@@ -11,6 +11,13 @@
   margin-left: 90%;
 }
 
+.card {
+  font-size: 10px !important;
+}
+
+.tag {
+  margin-top: 50px;
+}
 .card-container{
   display: flex;
       justify-content: space-around;
@@ -19,6 +26,7 @@
       padding: 30px 10px 10px 5px ;
       font-size:20px;
       text-align:left;
+      flex-direction: row;
 }
 
 
@@ -29,6 +37,7 @@
       margin:40px;
       box-sizing: border-box;
 }
+
 
     .box1 {
     display: block;

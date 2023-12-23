@@ -24,10 +24,10 @@ const Displaycard = ({data}) => {
           <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
             {data.tickets[0].id}
           </Typography>
-          <Typography variant="h5" component="div">
+          <Typography sx={{ fontSize: 17 }} variant="h5" component="div">
             {data.tickets[0].title}
           </Typography>
-          <Typography variant="h5" component="div">
+          <Typography className="tag" sx={{ fontSize: 15 }} variant="h5" component="div">
             {data.tickets[0].tag}
           </Typography>
         </CardContent>
