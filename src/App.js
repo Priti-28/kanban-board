@@ -1,14 +1,67 @@
 import "./App.css";
-import DarkModeIcon from "@mui/icons-material/DarkMode";
+// import DarkModeIcon from "@mui/icons-material/DarkMode";
 import Button from "@mui/material/Button";
 import Displaycard from "./Displaycard";
 import { useEffect, useState } from "react";
+import DarkModeToggle from "./DarkModeToggle";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
   const [data, setData] = useState({ tickets: [], users: [] });
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  const handleChange = (event) => {
+    switch (event.target.value) {
+      default:
+        setData({
+          tickets: [
+            {
+              id: "CAM-1",
+              title: "Update User Profile Page UI",
+              tag: ["Feature request"],
+              userId: "usr-1",
+              status: "Todo",
+              priority: 4,
+            },
+          ],
+          users: [],
+        });
+        break;
+      case "status":
+        setData({
+          tickets: [
+            {
+              id: "CAM-1",
+              title: "skdjboshfoih oisdhgoiahglksag",
+              tag: ["Feature request"],
+              userId: "usr-1",
+              status: "Todo",
+              priority: 4,
+            },
+          ],
+          users: [],
+        });
+        break;
+      case "user":
+        setData({
+          tickets: [
+            {
+              id: "CAM-1",
+              title: "lshf oishgohgpshfgk",
+              tag: ["Feature request"],
+              userId: "usr-1",
+              status: "Todo",
+              priority: 4,
+            },
+          ],
+          users: [],
+        });
+      // case "priority":
+      //   setData()
+    }
+  };
+
   useEffect(() => {
     console.log("useEffect: Component is mounted");
     let isMounted = true;
@@ -53,6 +106,10 @@ function App() {
     };
   }, []);
 
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+  };
+
   return (
     <div className="App">
       <div className="navigation">
@@ -60,14 +117,18 @@ function App() {
           <div class="display-switch-wrapper">
             <div>
               <button onClick={() => setIsOpen(!isOpen)}>
-                Toggle Dropdown
+                Display Dropdown
               </button>
               {isOpen && (
                 <div>
                   <section>
                     <div>
                       <span>Grouping</span>
-                      <select name="grouping" id="grouping">
+                      <select
+                        name="grouping"
+                        id="grouping"
+                        onChange={handleChange}
+                      >
                         <option value="status">status</option>
                         <option value="user">user</option>
                         <option value="priority">priority</option>
@@ -87,10 +148,16 @@ function App() {
           </div>
         </nav>
 
-        <div className="darkmode">
+        {/* <div className="darkmode">
           <DarkModeIcon />
+        </div> */}
+
+        {/* For dark mode  */}
+        <div className="dark-mode">
+          <DarkModeToggle />
         </div>
       </div>
+
       <div className="dashboard">
         <div className="card-container">
           <div className="inner-container">
@@ -105,7 +172,7 @@ function App() {
               ) : error ? (
                 <p>Error: {error.message}</p>
               ) : (
-                <Displaycard data={data} />
+                <Displaycard data={data} isDarkMode={isDarkMode} />
               )}
             </div>
             <div class="box2">

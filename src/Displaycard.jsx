@@ -5,6 +5,7 @@ import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import './App.css';
+import { useState } from "react";
 
 
 const bull = (
@@ -16,10 +17,16 @@ const bull = (
   </Box>
 );
 
-const Displaycard = ({data}) => {
+const Displaycard = ({ data}) => {
   return (
-    <div className="card">
-      <Card sx={{ minWidth: 275 }}>
+    // <div className="card">
+    // <div className={`card ${isDarkMode ? "dark-mode" : ""}`}>
+    <div
+      className={`card ${
+        document.body.classList.contains("dark-mode") ? "dark-mode" : ""
+      }`}
+    >
+      <Card sx={{ minWidth: 275}}>
         <CardContent>
           <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
             {data.tickets[0].id}
@@ -27,7 +34,12 @@ const Displaycard = ({data}) => {
           <Typography sx={{ fontSize: 17 }} variant="h5" component="div">
             {data.tickets[0].title}
           </Typography>
-          <Typography className="tag" sx={{ fontSize: 15 }} variant="h5" component="div">
+          <Typography
+            className="tag"
+            sx={{ fontSize: 15 }}
+            variant="h5"
+            component="div"
+          >
             {data.tickets[0].tag}
           </Typography>
         </CardContent>

@@ -1,3 +1,17 @@
+
+/* Add styles for dark mode */
+.dark-mode {
+  background-color: #1e1e1e !important;
+  color: #fff !important;
+}
+
+/* Add styles for dark mode button */
+.dark-mode button {
+  background-color: #fff !important;
+  color: #1e1e1e !important;
+}
+
+
 .navigation {
   padding: 7px 5px 12px 5px;
   display: flex;
@@ -6,6 +20,9 @@
 .dashboard {
   background-color: #f4f5f8;
 }
+
+
+
 
 .darkmode {
   margin-left: 90%;
@@ -27,6 +44,7 @@
       font-size:20px;
       text-align:left;
       flex-direction: row;
+
 }
 
 
@@ -36,6 +54,7 @@
       gap: 20px; /* Adjust the gap as needed */
       margin:40px;
       box-sizing: border-box;
+      
 }
 
 
